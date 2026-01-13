@@ -8,6 +8,7 @@ import {
   Printer,
 } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
+import signature from '../../../assets/signature.png'
 
 const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString("en-IN", {
@@ -127,17 +128,19 @@ const StudyCentrPDF = forwardRef(({ data, course }, ref) => {
           </div>
 
           {/* Registration Details */}
-          <div className=" rounded-lg mt-8 text-right ">
+          <div className=" rounded-lg mt-6 text-right ">
             <div className="grid grid-cols-2 gap-4 text-sm">
-            <div className="relative">
-            <div className="absolute left-0 -top-3">
-          <QRCodeSVG size={70} value={'tssr council authorized certificate'}/>
-          </div>
-            </div>
-              <div className="flex flex-col items-end justify-end">
-                
-              <h1 className="font-medium">CHAIRMAN, TSSR COUNCIL</h1>
-              <h1 className="text-sm text-muted-foreground">Central Administrative office</h1>
+              <div className="relative">
+                <QRCodeSVG size={80} value={'tssr council authorized certificate'}/>
+                <div className="absolute left-0 -top-3">
+                </div>
+              </div>
+              <div className="flex flex-col items-end justify-end ">
+                <div className=" ">
+                  <img className="w-28 object-contain" src={signature} alt="" />
+                </div>
+                <h1 className="font-medium">CHAIRMAN, TSSR COUNCIL</h1>
+                <h1 className="text-sm text-muted-foreground">Central Administrative office</h1>
               </div>
             </div>
           </div>
@@ -177,7 +180,7 @@ export default function CenterPDF({ data, course }) {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
     contentRef: componentRef,
-    documentTitle: `StudyCenter`,
+    documentTitle: `${data.name}`,
     pageStyle: `
       @page {
         size: A4;
@@ -199,7 +202,7 @@ export default function CenterPDF({ data, course }) {
             Print Data
           </Button>
         </div>
-        <div className="bg-white rounded-lg sr-only shadow-2xl overflow-hidden">
+        <div className="bg-white rounded-lg sr-only fied iset-0 shadow-2xl overflow-hidden">
           <StudyCentrPDF ref={componentRef} data={data} course={course} />
         </div>
       </div>

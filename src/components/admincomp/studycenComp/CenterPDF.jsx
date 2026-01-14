@@ -130,13 +130,11 @@ const StudyCentrPDF = forwardRef(({ data, course }, ref) => {
           {/* Registration Details */}
           <div className=" rounded-lg mt-6 text-right ">
             <div className="grid grid-cols-2 gap-4 text-sm">
-              <div className="relative">
-                <QRCodeSVG size={80} value={'tssr council authorized certificate'}/>
-                <div className="absolute left-0 -top-3">
-                </div>
+              <div className="relative  pl-3">
+                <QRCodeSVG size={90} value={'tssr council authorized certificate'}/>
               </div>
               <div className="flex flex-col items-end justify-end ">
-                <div className=" ">
+                <div className="relative right-9 ">
                   <img className="w-28 object-contain" src={signature} alt="" />
                 </div>
                 <h1 className="font-medium">CHAIRMAN, TSSR COUNCIL</h1>
@@ -202,7 +200,7 @@ export default function CenterPDF({ data, course }) {
             Print Data
           </Button>
         </div>
-        <div className="bg-white rounded-lg sr-only fied iset-0 shadow-2xl overflow-hidden">
+        <div className="bg-white rounded-lg sr-only fixe d inse t-0 shadow-2xl overflow-hidden">
           <StudyCentrPDF ref={componentRef} data={data} course={course} />
         </div>
       </div>

@@ -71,6 +71,9 @@ const allValid = newStudents.every(
             toast.error(res.message);
           }
         },
+        onError: (err) => {
+          toast.error("Error occurred while enrolling students.");
+        }
       }
     );
   };

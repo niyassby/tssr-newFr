@@ -117,7 +117,7 @@ const StudyCentrPDF = forwardRef(({ data, course }, ref) => {
 
           {/* Status Information */}
           <div className=" ">
-            <div className="bg-gray-100 p-4 rounded-lg border">
+            <div className="bg-gray-100 p-3 rounded-lg border">
               <h3 className="font-semibold text-blue-800 mb-2">Approved Courses</h3>
               {course?.map((data, i) =>{
                 return<span key={i} className="text-sm text-gray-600">
@@ -128,7 +128,7 @@ const StudyCentrPDF = forwardRef(({ data, course }, ref) => {
           </div>
 
           {/* Registration Details */}
-          <div className=" rounded-lg mt-6 text-right ">
+          <div className=" rounded-lg mt-4 text-right ">
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="relative  pl-3">
                 <QRCodeSVG size={90} value={'tssr council authorized certificate'}/>
@@ -138,14 +138,14 @@ const StudyCentrPDF = forwardRef(({ data, course }, ref) => {
                   <img className="w-28 object-contain" src={signature} alt="" />
                 </div>
                 <h1 className="font-medium">CHAIRMAN, TSSR COUNCIL</h1>
-                <h1 className="text-sm text-muted-foreground">Central Administrative office</h1>
+                {/* <h1 className="text-sm text-muted-foreground">Central Administrative office</h1> */}
               </div>
             </div>
           </div>
         </div>
 
         {/* Footer */}
-        <div className="mt-8 pt-4 border-t border-gray-800">
+        <div className="mt-3 pt-4 border-t border-gray-800">
           <div className="text-center">
             <p className="text-sm text-gray-600 ">
             We here by certify that <span className="font-medium">{data.name}</span> is an Authorised Training Center of TSSR COUNCIL as per the rules & Regulations stipulated by the authority
@@ -154,8 +154,8 @@ const StudyCentrPDF = forwardRef(({ data, course }, ref) => {
               This certificate is issued by the TSSR Council 
             </p> */}
             
-            <p className="text-xs text-gray-500 mt-2 p-1">
-            Corporate office, TSSR Bhavan, Thamarassery, Calicut Kerala, India, Pin -  673 573
+            <p className="text-xs text-gray-500 p-1">
+            Central Administrative office, TSSR Bhavan, Thamarassery, Calicut Kerala, India, Pin - 673 573
             </p>
           </div>
         </div>
@@ -200,7 +200,7 @@ export default function CenterPDF({ data, course }) {
             Print Data
           </Button>
         </div>
-        <div className="bg-white rounded-lg sr-only fixe d inse t-0 shadow-2xl overflow-hidden">
+        <div className="bg-white rounded-lg sr-only abs olute inset-0 shadow-2xl overflow-hidden">
           <StudyCentrPDF ref={componentRef} data={data} course={course} />
         </div>
       </div>

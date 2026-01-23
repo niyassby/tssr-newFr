@@ -111,25 +111,25 @@ export function DocDownload({ name, fields= [], mark, date, isLong }) {
 
     try {
       const result = await fetchData();
-      // return console.log(result);
       if (!result.success || result.data.length === 0) {
         const msg = result.message || "No data found";
         toast.error(msg);
         setError(msg);
         return;
       }
+      const centerName = result.studycenterName
 
       const rows = result?.data?.map((item) => ({
         "Admission Number": item.admissionNumber,
         "Student ID": item.studentId,
         Name: item.name,
-        "Study Center" : item.studycenterName,
+        "Study Center" : item?.studycenterName ?? centerName,
         Course: item.courseName,
         ...(date && { "Exam Date": "" }),
         ...Object.fromEntries(fields.map((field) => [field, ""])),
       }));
 
-      const fileName = result.studycenterName || "Attendance Sheet";
+      const fileName = result.studycenterName || "Doc Sheet";
       excelDownload(rows, fileName);
       // setFilters({ course: "", batch: "", year: "" });
       setError(null);

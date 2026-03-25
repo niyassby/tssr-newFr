@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 import QRCode from 'qrcode'
 
 // Import images
-import head from "../../../assets/pdfHead.png"
+import head from "../../../assets/PdfHead.png"
 import logo from '../../../assets/Logo.png'
 import sealimg from '../../../assets/sealpng.png'
 

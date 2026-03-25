@@ -20,9 +20,10 @@ export const subjectServices = {
     return response.data;
   },
   updateSubjects: async (data) => {
-    const response = await axiosInstance.put(API_ENDPOINTS.SUBJECTS.UPDATE_SUBJECTS,{} ,{
+    const { id, ...bodyData } = data;
+    const response = await axiosInstance.put(API_ENDPOINTS.SUBJECTS.UPDATE_SUBJECTS, Object.keys(bodyData).length > 0 ? bodyData : {}, {
       params: {
-        id:data.id,
+        id: id,
       },
     });
     return response.data;

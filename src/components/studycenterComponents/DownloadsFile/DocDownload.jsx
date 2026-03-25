@@ -27,6 +27,38 @@ export function DocDownload({ name, fields= [], mark, date, isLong }) {
 
   const { isPending, mutateAsync } = useStudentForDl();
 
+  const windowOpen = ()=>{
+    const printWindow = window.open("", "", "width=800,height=600");
+    if (!printWindow) {
+    alert("Please allow popups to download the PDF");
+    return;
+  }
+    const html = contentRef?.current?.innerHTML;
+    if(!html){
+      toast.error("No data found");
+      return;
+    }
+    printWindow.document.write(`
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print PDF</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    ${html}
+</body>
+</html>
+    `)
+    printWindow.document.close();
+
+  setTimeout(() => {
+    printWindow.print();
+  }, 400);
+  }
+
   const handlePrint = useReactToPrint({
     contentRef,
     documentTitle: name,
@@ -91,7 +123,8 @@ export function DocDownload({ name, fields= [], mark, date, isLong }) {
       setPdfData(result);
 
       setTimeout(() => {
-        handlePrint();
+        // handlePrint();
+        windowOpen()
       }, 200); // Delay to allow DOM update
       // setFilters({ course: "", batch: "", year: "" });
       setError(null);

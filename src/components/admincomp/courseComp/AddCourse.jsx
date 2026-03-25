@@ -85,7 +85,7 @@ export function AddCourse({formData, setFormData, subject, submit, type, selecte
         </div>
         <div className="sm:col-span-9 ">
           <SubjectSelect
-            options={subject}
+            options={subject?.sort((a, b) => a.name.localeCompare(b.name))}
             selected={selected}
             onChange={setSelected}
             placeholder="Select items"

@@ -9,9 +9,10 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
-import { BadgeCheck, Ban, BookText } from "lucide-react";
+import { BadgeCheck, Ban, BookText, Pencil } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-export default function SubjectCard({ name, code, isActive, onToggle }) {
+export default function SubjectCard({ name, code, isActive, onToggle, onEdit }) {
   const [active, setActive] = useState(isActive);
 
   const handleToggle = () => {
@@ -31,8 +32,17 @@ export default function SubjectCard({ name, code, isActive, onToggle }) {
             Code: <span className="font-medium text-black">{code}</span>
           </CardDescription>
         </div>
-        <div className="absolute top-3 right-4 text-muted-foreground ">
-          <BookText size={18} strokeWidth={1.4} />
+        <div className="absolute top-3 right-4 text-muted-foreground flex items-center gap-3">
+          {onEdit && (
+            <Button
+              onClick={onEdit}
+              variant="outline"
+              size="icon"
+            >
+              <Pencil size={16} strokeWidth={1.5} />
+            </Button>
+          )}
+          {/* <BookText size={18} strokeWidth={1.4} /> */}
         </div>
       </CardHeader>
 

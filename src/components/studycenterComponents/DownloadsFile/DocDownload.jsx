@@ -151,13 +151,16 @@ export function DocDownload({ name, fields= [], mark, date, isLong }) {
         return;
       }
       const centerName = result.studycenterName
-
+// console.log(result.data)
       const rows = result?.data?.map((item) => ({
-        "Admission Number": item.admissionNumber,
         "Student ID": item.studentId,
+        "Admission Number": item.admissionNumber,
         Name: item.name,
         "Study Center" : item?.studycenterName ?? centerName,
         Course: item.courseName,
+        Duration: item.duration || "",
+        Batch: item.batchMonth || "",
+        Year: item.year || "",
         ...(date && { "Exam Date": "" }),
         ...Object.fromEntries(fields.map((field) => [field, ""])),
       }));

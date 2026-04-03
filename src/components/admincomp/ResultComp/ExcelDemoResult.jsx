@@ -70,7 +70,7 @@ function ExcelDemoResult() {
                     ...item,
                     dateOfExam: `${format(new Date(item?.dateOfExam?.from), "PPP")} - ${format(new Date(item?.dateOfExam?.to), "PPP")}`,
                     ...Object.fromEntries(data?.subjects?.map((field) => [field, ""])),
-                  }));
+                  })).sort((a, b) => a.studyCenterName.localeCompare(b.studyCenterName))
                 await excelDownload(rows, "Result")
                 toast.success("Excel downloaded successfully")
                 handleCancel()

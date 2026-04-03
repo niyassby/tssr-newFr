@@ -58,6 +58,7 @@ export function ViewCenter() {
 
 
   if(isLoading) return <div><Loader/></div>
+  if(!data.success) return <div>{data.message}</div>
 
   return (
     <div className="min-h-screen bg-background p-6">
@@ -172,7 +173,7 @@ export function ViewCenter() {
                     <Calendar className="h-4 w-4 text-muted-foreground mt-1 shrink-0" />
                     <div>
                       <p className="text-sm text-muted-foreground">Renewal Date</p>
-                      <p className="font-medium">{format(new Date(studyCenterData.renewalDate), "PPP")}</p>
+                      <p className="font-medium">{format(new Date(studyCenterData?.renewalDate || new Date()), "PPP") || ""}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -260,11 +261,11 @@ export function ViewCenter() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
                 <p className="text-sm text-muted-foreground">Created At</p>
-                <p className="font-medium">{format(new Date(studyCenterData.createdAt), "PPP")}</p>
+                <p className="font-medium">{format(new Date(studyCenterData.createdAt  || new Date()), "PPP")}</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Last Updated</p>
-                <p className="font-medium">{format(new Date(studyCenterData.updatedAt), "PPP")}</p>
+                <p className="font-medium">{format(new Date(studyCenterData.updatedAt  || new Date()), "PPP")}</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Record ID</p>

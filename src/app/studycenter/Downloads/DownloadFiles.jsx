@@ -13,7 +13,6 @@ function DownloadFiles() {
       <FileDownload
         title="Student Data"
         desc="Download the Student Data for the current semester"
-        icon=''
         comp={
           <DocDownload
             name="Student Data"
@@ -25,7 +24,6 @@ function DownloadFiles() {
       <FileDownload
         title="Attendance Register"
         desc="Download the attendance register for the current semester"
-        icon=''
         comp={
           <DocDownload
             name="Attendance Register"
@@ -112,7 +110,7 @@ function DownloadFiles() {
         }
       />
       <FileDownload
-        title="Commision Mark Sheet (PPTTC/MTTC)"
+        title="Commision Mark Sheet (PPTTC)"
         desc="Download the commision mark sheet for the current semester"
         comp={
           <DocDownload
@@ -129,7 +127,7 @@ function DownloadFiles() {
         }
       />
       <FileDownload
-        title="Craft & practical work (PPTTC/MTTC)"
+        title="Craft & practical work (PPTTC)"
         desc="Download the craft & practical work for the current semester"
         comp={
           <DocDownload
@@ -156,6 +154,30 @@ function DownloadFiles() {
           />
         }
       />
+      <FileDownload
+        title="Commision Mark Sheet (MTTC)"
+        desc="Download the commision mark sheet for the current semester"
+        comp={
+          <DocDownload
+            name="Commision Mark Sheet"
+            isLong={true}
+            mark={[100,100,100,100,100,100,100,100,100,900]}
+            fields={[
+              "Teaching",
+              "Commision & Viva",
+              "Reports",
+              "Craft",
+              "Practical Life Area",
+              "Sensorial Area",
+              "Language Area",
+              "Mathematics Area",
+              "Cultural Area",
+              "Total",
+            ]}
+          />
+        }
+      />
+      
       <FileDownload
         title="Teaching Practice Mark Sheet (PPTTC/MTTC)"
         desc="Download the teaching practice mark sheet for the current semester"

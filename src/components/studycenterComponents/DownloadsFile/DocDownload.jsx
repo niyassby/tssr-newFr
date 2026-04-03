@@ -44,7 +44,7 @@ export function DocDownload({ name, fields= [], mark, date, isLong }) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Print PDF</title>
+    <title>PDF Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>

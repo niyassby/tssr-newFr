@@ -97,7 +97,7 @@ function PDFDesign({ headers=[], marks, data=datas, date=false , name, isLong=fa
       const isHeader = headers && headers.length > 0
 
   return (
-    <div className="w-[210mm]   h-[297mm] mx-auto  ">
+    <div className="w-[210mm]   h-[297mm] mx-auto p-[2mm]">
         <div className="border-t border-x border-black/70 py-2">
             <img src={headerImg} className="w-full" alt="" />
         </div>
@@ -124,14 +124,14 @@ function PDFDesign({ headers=[], marks, data=datas, date=false , name, isLong=fa
         <div
           className={`w-full grid ${isHeader?"grid-cols-12" : "grid-cols-10"} border-b border-black/70 bg-[#e5e7eb]`} //text-white bg-[#253a7c]
         >
-          <div className="col-span-1 border-r border-black/70 p-2.5">
+          <div className="col-span-1 border-r flex items-center border-black/70 p-2.5">
             <h1 className="text-sm font-medium ">No</h1>
           </div>
-          <div className="col-span-2 border-r border-black/70 p-2.5">
+          <div className="col-span-2 border-r flex items-center border-black/70 p-2.5">
             <h1 className="text-sm font-medium ">Admissinon No</h1>
           </div>
-          <div className={`${isHeader?"col-span-2" : "col-span-7"} border-r border-black/70 p-2.5`}>
-            <h1 className="text-sm font-medium ">Name</h1>
+          <div className={`${isHeader?"col-span-2" : "col-span-7"} border-r flex items-center border-black/70 p-2.5`}>
+            <h1 className="text-sm font-medium ">Name of Student</h1>
           </div>
           {headers && headers.length > 0 && <div
             className={`col-span-7 grid `}

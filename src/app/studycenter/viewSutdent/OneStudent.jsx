@@ -407,7 +407,7 @@ function OneStudent() {
             />
             <div className="text-center md:text-left">
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight">{student.name?.toUpperCase()}</h1>
-              <p className="text-slate-300 mt-1">Admission No: <span className="font-semibold text-white">{student.admissionNumber}</span></p>
+              <p className="text-slate-300 mt-1">Register No: <span className="font-semibold text-white">{student.admissionNumber}</span></p>
               <div className="mt-4 flex items-center justify-center md:justify-start gap-3 flex-wrap">
                 {getStatusBadge(student.isCompleted, student.isPassed, student.isCertificateIssued)}
                 <Badge variant="outline" className="border-white/20 text-white bg-white/10 backdrop-blur-sm">

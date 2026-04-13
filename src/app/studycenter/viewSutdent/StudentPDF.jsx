@@ -83,7 +83,7 @@ const StudentCertificate = forwardRef( ({ studentData }, ref) => {
           <div className="grid grid-cols-8">
             <div className="col-span-2">
               <span className="font-normal text-muted-foreground text-sm">
-                Admission No :
+              Register No :
               </span>
             </div>
             <div className="col-span-3">

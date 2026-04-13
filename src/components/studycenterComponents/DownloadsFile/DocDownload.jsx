@@ -154,7 +154,7 @@ export function DocDownload({ name, fields= [], mark, date, isLong }) {
 // console.log(result.data)
       const rows = result?.data?.map((item) => ({
         "Student ID": item.studentId,
-        "Admission Number": item.admissionNumber,
+        "Register Number": item.admissionNumber,
         Name: item.name,
         "Study Center" : item?.studycenterName ?? centerName,
         Course: item.courseName,

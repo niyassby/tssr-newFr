@@ -20,8 +20,8 @@ function MarkSheet() {
       setError(null)
 
       if(!registrationNo){
-        toast.error('Please enter admission number')
-        setError('Please enter admission number')
+        toast.error('Please enter register number')
+        setError('Please enter register number')
         return
       }
       mutate({admissionNumber:registrationNo}, {
@@ -46,12 +46,12 @@ function MarkSheet() {
         <Card className='max-w-2xl w-full mx-auto'>
           <CardHeader>
             <CardTitle>Find Student Result</CardTitle>
-            <CardDescription>Enter admission number of student and click button</CardDescription>
+            <CardDescription>Enter register number of student and click button</CardDescription>
           </CardHeader>
           <CardContent>
             <div className='space-y-1 flex flex-col justify-center'>
-              <Label htmlFor="admissionNumber">Admission Number</Label>
-              <Input id="admissionNumber" value={registrationNo} onChange={e=>setRegistrationNo(e.target.value.trim())} placeholder='Enter Admission Number' />
+              <Label htmlFor="admissionNumber">Register Number</Label>
+              <Input id="admissionNumber" value={registrationNo} onChange={e=>setRegistrationNo(e.target.value.trim())} placeholder='Enter Register Number' />
             <p className='text-sm text-gray-500'>
             Note: The result will be displayed, and you can download it in PDF format
             </p>

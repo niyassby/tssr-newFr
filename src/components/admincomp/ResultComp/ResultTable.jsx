@@ -35,7 +35,7 @@ export function ResultTable({ data, setSelectedIds, selectedIds }) {
           </TableHead>
           <TableHead className="w-[10px] ">No</TableHead>
           <TableHead>Student Name</TableHead>
-          <TableHead>Admission NO</TableHead>
+          <TableHead>Register NO</TableHead>
           <TableHead>Course</TableHead>
           <TableHead>Study Center</TableHead>
           <TableHead>Date Of Exam</TableHead>

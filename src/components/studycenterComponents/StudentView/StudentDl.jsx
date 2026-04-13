@@ -27,6 +27,7 @@ import { Input } from "@/components/ui/input";
 
 const EXPORT_FIELDS = [
   { id: "registrationNumber", label: "Reg. Number" },
+  { id: "studentId", label: "Student ID" },
   { id: "name", label: "Name" },
   { id: "age", label: "Age" },
   { id: "dateOfBirth", label: "Date of Birth" },
@@ -58,6 +59,7 @@ export function StudentDl() {
     "email",
     "adhaarNumber",
     "registrationNumber",
+    "studentId",
     "dateOfAdmission",
     "parentName",
     "qualification",

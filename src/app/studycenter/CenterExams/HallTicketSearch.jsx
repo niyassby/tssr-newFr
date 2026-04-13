@@ -35,7 +35,7 @@ function HallTicketSearch() {
             <p className='text-sm text-gray-500'>Search your hall ticket by using your application number</p>
         </div>
         <div className='mt-5 flex gap-2'>
-            <Input onChange={e=>setRegistrationNo(e.target.value)} placeholder='Enter Admission Number' />
+            <Input onChange={e=>setRegistrationNo(e.target.value)} placeholder='Enter Register Number' />
             <Button onClick={getStudentData}>
               {isPending ? <Loader2 className='animate-spin min-w-28'/>: "Get Hall Ticket"}
             </Button>

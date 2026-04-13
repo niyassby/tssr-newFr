@@ -39,7 +39,7 @@ import Avatarview from "@/components/ui/avatarview";
             <TableHead>Course</TableHead>
             <TableHead>Batch</TableHead>
             <TableHead>Year</TableHead>
-            <TableHead>Adm. NO</TableHead>
+            <TableHead>Reg. NO</TableHead>
             <TableHead>View</TableHead>
             {(user.isAdmin ||settingData.editStudentDataPermission ) && <TableHead>Edit</TableHead>}
           </TableRow>

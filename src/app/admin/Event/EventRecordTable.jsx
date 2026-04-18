@@ -98,6 +98,7 @@ function EventRecordTable({ eventId }) {
                             <TableHead className="w-[120px]">Reg. No</TableHead>
                             <TableHead>Participant</TableHead>
                             <TableHead>Contact Info</TableHead>
+                            <TableHead>Study Center</TableHead>
                             <TableHead>Registration Date</TableHead>
                             <TableHead>Attendance Status</TableHead>
                             <TableHead className="text-right">Payment Status</TableHead>
@@ -138,6 +139,9 @@ function EventRecordTable({ eventId }) {
                                             <span className="text-sm font-medium">{record.participantData?.phoneNumber}</span>
                                             <span className="text-xs text-gray-500 dark:text-gray-400">{record.participantData?.email}</span>
                                         </div>
+                                    </TableCell>
+                                    <TableCell className="text-gray-600 dark:text-gray-300">
+                                        {record.participantData?.studyCenterName || "N/A"}
                                     </TableCell>
                                     <TableCell className="text-gray-600 dark:text-gray-300">
                                         {record.createdAt ? format(new Date(record.createdAt), 'MMM dd, yyyy') : 'N/A'}

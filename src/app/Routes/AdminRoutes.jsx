@@ -30,6 +30,10 @@ import SubjectList from "../admin/Course/SubjectList";
 import CenterRequest from "../admin/study centre/CenterRequest";
 import FilterContext from "@/Context/FilterContext";
 import { ViewCenter } from "../admin/study centre/ViewCenter";
+import Resources from "../admin/Gallery/resources";
+import Events from "../admin/Event/events";
+import CreateEvent from "../admin/Event/createEvent";
+import ViewEvent from "../admin/Event/viewEvent";
 
 export default function AdminRoutes() {
   return (
@@ -42,31 +46,35 @@ export default function AdminRoutes() {
         <Route path="edit/:id" element={<EditStudyCen />} />
         <Route path="view/:id" element={<ViewCenter />} />
       </Route>
-      <Route path="course" element={<Outlet />}>
-        <Route index element={<Courses />} />
+      <Route path="academics" element={<Outlet />}>
+        <Route index element={<AdmissionSection />} />
+        <Route path="course" element={<Courses />} />
         <Route path="subjects" element={<SubjectList />} />
         <Route path="request" element={<RequestCourse />} />
       </Route>
-      <Route path="admission" element={<AdmissionSection />} />
       <Route path="students" element={<FilterContext><Outlet /></FilterContext>}>
         <Route index element={<ViewStudent />} />
         <Route path="verification" element={<StudentsVerification />} />
         <Route path="view" element={<OneStudent />} />
         <Route path="edit" element={<EditStudentForm />} />
       </Route>
-      <Route path="results" element={<Outlet />}>
-        <Route index element={<ResultPage />} />
-        <Route path="upload" element={<UploadResult />} />
-      </Route>
-      <Route path="downloads" element={<DownloadFiles />} />
-      <Route path="gallery" element={<Gallery />} />
-      <Route path="orders" element={<Outlet />}>
-        <Route index element={<Orders />} />
+      <Route path="resources" element={<Outlet />}>
+        <Route index element={<Resources />} />
+        <Route path="downloads" element={<DownloadFiles />} />
+        <Route path="gallery" element={<Gallery />} />
+        <Route path="orders" element={<Orders />} />
         <Route path="products" element={<Store />} />
       </Route>
       <Route path="examination" element={<Outlet />}>
         <Route index element={<Exams />} />
         <Route path="create" element={<CreateExam />} />
+        <Route path="result" element={<ResultPage />} />
+        <Route path="result/upload" element={<UploadResult />} />
+      </Route>
+      <Route path="event" element={<Outlet />}>
+        <Route index element={<Events />} />
+        <Route path="create" element={<CreateEvent />} />
+        <Route path=":id" element={<ViewEvent />} />
       </Route>
       <Route path="settings" element={<AdminSettings />} />
       <Route path="notifications" element={<Outlet />}>

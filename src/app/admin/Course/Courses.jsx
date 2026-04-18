@@ -97,7 +97,7 @@ export function Courses() {
                 <Button
                   className={"w-full border"}
                   variant='secondary'
-                  onClick={() => navigate("/admin/course/subjects")}
+                  onClick={() => navigate("/admin/academics/subjects")}
                 >
                   Subjects
                 </Button>

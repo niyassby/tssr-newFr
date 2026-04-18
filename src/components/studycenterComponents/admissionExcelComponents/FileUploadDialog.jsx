@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-// import { uploadFile } from "@/lib/s3Service";
 import { toast } from "sonner";
 import { useFirebaseUpload } from "@/hooks/useFirebaseUpload";
 import { Progress } from "@/components/ui/progress";

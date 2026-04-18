@@ -36,6 +36,7 @@ function HTverification() {
           }
         }
       })
+      
     }, [id])
 
     if(isPending)return <div className='w-full h-screen'><Loader/></div>

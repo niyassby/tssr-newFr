@@ -23,7 +23,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Book02Icon, Bookmark03Icon, CheckmarkBadge02Icon, FileDownloadIcon, GraduateMaleIcon, Home04Icon, Image02Icon, InformationSquareIcon, Mortarboard02Icon, NoteEditIcon, Notification03Icon, Settings02Icon, Ticket03Icon, UserAdd01Icon, UserMultipleIcon } from "hugeicons-react"
+import { Book02Icon, Bookmark03Icon, Calendar01Icon, Calendar04Icon, CheckmarkBadge02Icon, FileDownloadIcon, Folder01Icon, GraduateMaleIcon, Home04Icon, Image02Icon, InformationSquareIcon, Mortarboard02Icon, Note01Icon, NoteEditIcon, Notification03Icon, Settings02Icon, Ticket03Icon, UserAdd01Icon, UserIcon, UserMultipleIcon } from "hugeicons-react"
 import { Link } from "react-router-dom"
 
 const data = {
@@ -45,36 +45,40 @@ const data = {
       items: [
         {
           title: "Add Centre",
-          url: "studycentre/add",
+          url: "/admin/studycentre/add",
         },
         {
           title: "Requests",
-          url: "studycentre/req",
+          url: "/admin/studycentre/req",
         },
       ],
     },
     {
-      title: "Courses",
-      url: "course",
+      title: "Academics",
+      url: "academics",
       icon: Mortarboard02Icon,
       items: [
         {
+        title: "Courses",
+        url: "/admin/academics/course",
+      },
+        {
         title: "Subjects",
-        url: "course/subjects",
+        url: "/admin/academics/subjects",
       },
         {
         title: "Requests",
-        url: "course/request",
+        url: "/admin/academics/request",
       },
     ]
       
     },
-    {
-      title: "Admission",
-      url: "admission",
-      icon: UserAdd01Icon,
+    // {
+    //   title: "Admission",
+    //   url: "admission",
+    //   icon: UserAdd01Icon,
       
-    },
+    // },
     {
       title: "Students",
       url: "students",
@@ -90,51 +94,60 @@ const data = {
     {
       title: "Examination",
       url: "examination",
-      icon: NoteEditIcon,
-      
-    },
-    {
-      title: "Manage Staff",
-      url: "staff", 
-      icon: UserMultipleIcon,
-      
-    },
-    {
-      title: "Downloads",
-      url: "downloads", 
-      icon: FileDownloadIcon, 
-      
-    },
-    {
-      title: "Results",
-      url: "results",
-      icon: CheckmarkBadge02Icon, 
+      icon: Note01Icon,
       items: [
+        {
+          title: "Result",
+          url: "/admin/examination/result",
+        },
         {
           title: "Add Result",
-          url: "results/upload",
+          url: "/admin/examination/result/upload",
         }
       ]
       
     },
     {
-      title: "Gallery",
-      url: "gallery",
-      icon: Image02Icon, 
+      title: "Staff & Faculty",
+      url: "staff", 
+      icon: UserIcon,
       
     },
     {
-      title: "TSSR Store",
-      url: "orders",
-      icon: Settings2,
+      title: "Event Manage",
+      url: "event", 
+      icon: Calendar01Icon,
       items: [
         {
-          title: "Products",
-          url: "orders/products",
+          title: "Create Event",
+          url: "/admin/event/create",
         }
       ]
-      
     },
+    {
+      title: "Resources",
+      url: "resources", 
+      icon: Folder01Icon, 
+      items: [
+        {
+          title: "Downloads",
+          url: "/admin/resources/downloads",
+        },
+        {
+          title: "Products",
+          url: "/admin/resources/products",
+        },
+        {
+          title: "Orders",
+          url: "/admin/resources/orders",
+        },
+        {
+          title: "Gallery",
+          url: "/admin/resources/gallery",
+        }
+      ]
+    },
+    
   ],
   navSecondary: [
     {

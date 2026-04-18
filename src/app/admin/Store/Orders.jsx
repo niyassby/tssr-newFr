@@ -59,7 +59,7 @@ const handleDl = async () => {
         <h1 className="text-xl md:text-2xl font-bold">Manage Orders</h1>
         <div className='space-x-2'>
           <Button onClick={handleDl} variant='outline' > {isLoading ? <Loader2 className='animate-spin'/> : <>Excel <HiMiniArrowDownTray /></>} </Button>
-          <Button onClick={()=>navigate('/admin/orders/products')}>All Products</Button>
+          <Button onClick={()=>navigate('/admin/resources/products')}>All Products</Button>
         </div>
       </div>
       <Tabs defaultValue="Active" className="w-full mt-5">

@@ -23,9 +23,9 @@ export default function Page() {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 justify-between px-5 shrink-0 items-center gap-2 border-b">
-          <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
+        <header className="flex h-16 justify-between px-2 md:px-5 shrink-0 items-center gap-2 border-b">
+          <div className="flex items-center gap-2 ">
+            <SidebarTrigger  />
             <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>
               <BreadcrumbList>

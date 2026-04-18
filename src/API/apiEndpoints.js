@@ -133,6 +133,16 @@ export const API_ENDPOINTS = {
   },
   PDF: {
     DL_PDF: "/api/pdf/generate-pdf",
-  }
+  },
+  EVENT: {
+    CREATE_EVENT: "/api/events/create",
+    GET_ALL_EVENTS: "/api/events/getAllEvents",
+    UPDATE_EVENT: "/api/events/updateEvent",
+    DELETE_EVENT: "/api/events/deleteEvent",
+    GET_EVENT_DATA: "/api/events/getEventData",
+    GET_EVENT_RECORDS: "/api/events/getEventRecordData",
+    UPDATE_EVENT_RECORDS: "/api/events/updateEventRecord",
+    DOWNLOAD_EVENT_RECORDS: "/api/events/downloadEventRecords",
+  },
 };
  

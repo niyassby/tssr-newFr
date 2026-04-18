@@ -17,11 +17,10 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
-export function NavMain({
-  items
-}) {
+export function NavMain({ items }) {
+  const location = useLocation();
   return (
     (<SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -45,15 +44,16 @@ export function NavMain({
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <SidebarMenuSub>
-                      {item.items?.map((subItem) => (
-                        <SidebarMenuSubItem  key={subItem.title}>
-                          <SidebarMenuSubButton asChild>
+                      {item.items?.map((subItem) => {
+                        const activeLink = subItem.url === location.pathname
+                        return <SidebarMenuSubItem  key={subItem.title}>
+                          <SidebarMenuSubButton isActive={activeLink} asChild>
                             <Link to={subItem.url}>
                               <span>{subItem.title}</span>
                             </Link>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
-                      ))}
+                      })}
                     </SidebarMenuSub>
                   </CollapsibleContent>
                 </>

@@ -153,7 +153,7 @@ export default function SubjectList() {
         </div>
         <div className="space-x-1">
 
-          <Button variant='outline' onClick={() => navigate(-1)}>Back</Button>
+          {/* <Button variant='outline' onClick={() => navigate(-1)}>Back</Button> */}
           <Button onClick={() => setDialogOpen(true)}>Add Subject</Button>
         </div>
       </div>

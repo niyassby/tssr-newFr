@@ -41,7 +41,7 @@ function Resources() {
     return (
         <div className="h-full w-full p-4 md:p-6 space-y-6">
             <div>
-                <h1 className="text-3xl font-bold text-gray-900">Resources</h1>
+                <h1 className="text-3xl font-bold ">Resources</h1>
                 <p className="text-gray-500 mt-1">Quick navigation for resources submenus</p>
             </div>
 
@@ -52,13 +52,13 @@ function Resources() {
                         <Link
                             key={index}
                             to={item.link}
-                            className="group flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-200 ease-in-out cursor-pointer"
+                            className="group flex flex-col items-center justify-center p-6 bg-background rounded-xl border shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-200 ease-in-out cursor-pointer"
                         >
                             <div className={`p-4 rounded-full ${item.bgColor} mb-4 group-hover:scale-110 transition-transform duration-200`}>
                                 <Icon className={`w-8 h-8 ${item.color}`} />
                             </div>
-                            <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                            <p className="text-sm text-center text-gray-500">{item.description}</p>
+                            <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                            <p className="text-sm text-center text-muted-foreground">{item.description}</p>
                         </Link>
                     )
                 })}

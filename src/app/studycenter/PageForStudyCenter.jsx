@@ -15,20 +15,21 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { ModeToggle } from "@/components/ui/theme-toggle";
 import { Outlet } from "react-router-dom";
 import {useLocation } from 'react-router-dom';
+export const formatCrumbName = (crumb) => {
+  return crumb
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
 
 export default function PageForStudyCenter() {
   const location = useLocation();
   const burdCrumb = location.pathname.split('/')
   const {notificationCount}=useNotificationCount()
 
-  const formatCrumbName = (crumb) => {
-    return crumb
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-  };
   
   
 
@@ -43,7 +44,7 @@ export default function PageForStudyCenter() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink to="/">
+                  <BreadcrumbLink to="/studycenter">
                     Home
                   </BreadcrumbLink>
                 </BreadcrumbItem>
@@ -57,8 +58,9 @@ export default function PageForStudyCenter() {
               </BreadcrumbList>
             </Breadcrumb>
           </div>
-          <div className="relative">
+          <div className="relative space-x-2">
             <NewNotifications/>
+            <ModeToggle/>
             {notificationCount > 0 &&<div className="absolute -top-1.5 -right-1.5 ">
             <div className="text-white text-xs grid bg-red-500  rounded-full size-5 place-content-center animate-pulse">{notificationCount}</div>
             </div>}

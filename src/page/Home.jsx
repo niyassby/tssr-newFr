@@ -36,7 +36,7 @@ function Home() {
   }, [])
   return (
     <>
-    <div className="fixed inset-0 -z-10 overflow-hidden">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-w">
       {/* Gradient background with animation */}
       <div
         className="absolute inset-0 opacity-60"
@@ -84,11 +84,11 @@ function Home() {
       <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-accent/8 rounded-full blur-2xl animate-[pulse-glow_8s_ease-in-out_infinite] animation-delay-[3s]" />
     </div>
     <div className="w-full min-h-screen p-4 flex items-center max-md:flex-col justify-center gap-4 ">
-      <Card className="w-full max-w-sm relative group overflow-hidden bg-[#fffefb] shadow-none hover:shadow-2xl transition-all duration-200 rounded-3xl">
+      <Card className="w-full max-w-sm relative group overflow-hidden  shadow-none hover:shadow-2xl transition-all duration-200 rounded-3xl">
         <div className="absolute size-0 group-hover:size-40 transition-all duration-500 rounded-full bg-lime-100/80 -top-20 -right-10"></div>
         <CardContent>
           <div>
-            <div className="size-14 rounded-full grid place-content-center border bg-lime-300">
+            <div className="size-14 text-black rounded-full grid place-content-center border bg-lime-300">
               <Resize01Icon size={20} />
             </div>
             <div className="mt-5">
@@ -108,7 +108,7 @@ function Home() {
             
             <div className="mt-6">
               <button
-                className="w-full rounded-full border group cursor-pointer py-2 px-4 bg-lime-300/80 hover:bg-lime-200 transition-all font-semibold flex items-center justify-center gap-2"
+                className="w-full rounded-full border group cursor-pointer text-black py-2 px-4 bg-lime-300/80 hover:bg-lime-200 transition-all font-semibold flex items-center justify-center gap-2"
                 onClick={() => navigate("/Login")}
               >
                 <span>Login Now</span>
@@ -121,11 +121,11 @@ function Home() {
           </div>
         </CardContent>
       </Card>
-      <Card className="w-full max-w-sm relative group overflow-hidden bg-[#fffefb] shadow-none hover:shadow-2xl transition-all duration-200 rounded-3xl">
+      <Card className="w-full max-w-sm relative group overflow-hidden  shadow-none hover:shadow-2xl transition-all duration-200 rounded-3xl">
         <div className="absolute size-0 group-hover:size-40 transition-all duration-500 rounded-full bg-fuchsia-100/80 -top-20 -right-10"></div>
         <CardContent>
           <div>
-            <div className="size-14 rounded-full grid place-content-center border bg-fuchsia-300">
+            <div className="size-14 text-black rounded-full grid place-content-center border bg-fuchsia-300">
               <AiIdeaIcon size={20} />
             </div>
             <div className="mt-5">
@@ -149,7 +149,7 @@ function Home() {
               <a
                 href="https://tssrcouncil.com"
                 target="_blank"
-                className="w-full rounded-full border group cursor-pointer py-2 px-4 bg-fuchsia-300/80 hover:bg-fuchsia-200 transition-all font-semibold flex items-center justify-center gap-2"
+                className="w-full rounded-full border group cursor-pointer text-black py-2 px-4 bg-fuchsia-300/80 hover:bg-fuchsia-200 transition-all font-semibold flex items-center justify-center gap-2"
               >
                 <span>Visit Now</span>
                 <ArrowRight

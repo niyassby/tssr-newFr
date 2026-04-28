@@ -41,7 +41,7 @@ function AllExams({ data }) {
         {transformedData.map((item, index) => {
           return (
             <Card key={index} className="shadow-none rounded-2xl hover:shadow-lg transition-shadow duration-300">
-              <CardHeader className="pb-3 border-b-2 border-gray-100">
+              <CardHeader className="pb-3 border-b-2 ">
                 <CardTitle className="text-lg font-bold text-pry">
                   {item.examName}
                 </CardTitle>
@@ -57,10 +57,10 @@ function AllExams({ data }) {
                   <div className="flex gap-3">
                     <Calendar03Icon size={20} />
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">
+                      <p className="text-sm font-medium text-muted-foreground">
                         Exam Period
                       </p>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm ">
                         {format(new Date(item.from), "PPP")} -{" "}
                         {format(new Date(item.to), "PPP")}
                       </p>
@@ -70,8 +70,8 @@ function AllExams({ data }) {
                   <div className="flex gap-3">
                     <Time04Icon size={20} />
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">Time</p>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm font-medium text-muted-foreground">Time</p>
+                      <p className="text-sm ">
                         {item.examTime.from} - {item.examTime.to}
                       </p>
                     </div>
@@ -80,10 +80,10 @@ function AllExams({ data }) {
                   <div className="flex gap-3">
                     <Location06Icon size={20} />
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">
+                      <p className="text-sm font-medium text-muted-foreground">
                         Exam Center
                       </p>
-                      <p className="text-sm text-gray-600">{item.examCenter}</p>
+                      <p className="text-sm ">{item.examCenter}</p>
                     </div>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ function AllExams({ data }) {
                 <Separator />
 
                 {/* Additional Details */}
-                <div className="grid grid-cols-2 gap-4 px-4 divide-x bg-primary-foreground py-2 rounded-lg">
+                <div className="grid grid-cols-2 gap-4 px-4 divide-x bg-muted py-2 rounded-lg">
                   <div>
                     <p className="text-xs text-gray-500">Batch</p>
                     <p className="text-sm font-medium">{item.batchId}</p>

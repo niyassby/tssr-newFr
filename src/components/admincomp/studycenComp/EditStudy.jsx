@@ -368,7 +368,7 @@ const imgae = file ? URL.createObjectURL(file) : data?.logo || ""
       <div>
         <div className="space-y-2">
         {admins?.map((admin, index) => (
-          <div key={index} className="grid sm:grid-cols-4 items-center md:grid-cols-1 lg:grid-cols-4 gap-2 border py-2 px-4 rounded-lg hover:bg-primary-foreground transition-all">
+          <div key={index} className="grid sm:grid-cols-4 items-center md:grid-cols-1 lg:grid-cols-4 gap-2 border py-2 px-4 rounded-lg hover:bg-muted transition-all">
             <h1 className="text-sm font-medium">{admin.name}</h1>
             <h1 className="text-sm text-muted-foreground">{admin.email}</h1>
             <h1 className="text-sm text-muted-foreground">{admin.phoneNumber}</h1>

@@ -91,7 +91,7 @@ const ExcelUpload = ({ onBack, setCourse, course }) => {
   return (
     <div>
       {tableData.length >= 0 ? (
-        <Card className="w-full max-w-5xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-md">
+        <Card className="w-full max-w-5xl mx-auto bg-background border  rounded-2xl shadow-md">
           <CardHeader>
             <CardTitle className="text-xl font-semibold">
               Upload Student Data
@@ -107,14 +107,14 @@ const ExcelUpload = ({ onBack, setCourse, course }) => {
               {!translate
                 ? instruction.map((item, index) => {
                     return (
-                      <p key={index} className="  text-gray-700 ">
+                      <p key={index} className="  text-muted-foreground ">
                         {index + 1}. {item}
                       </p>
                     );
                   })
                 : malayalam.map((item, index) => {
                     return (
-                      <p key={index} className=" text-gray-700 malayalam-font">
+                      <p key={index} className=" text-muted-foreground malayalam-font">
                         {index + 1}. {item}
                       </p>
                     );
@@ -139,7 +139,7 @@ const ExcelUpload = ({ onBack, setCourse, course }) => {
                   htmlFor="excel"
                   className={`${
                     error ? "border-red-500" : ""
-                  } w-full py-7 border flex flex-col gapy-2 cursor-pointer hover:border-primary transition-all duration-200 hover:bg-primary-foreground items-center justify-center border-dashed border-gray-300 p-4 rounded-xl`}
+                  } w-full py-7 border flex flex-col gapy-2 cursor-pointer hover:border-primary transition-all duration-200 hover:bg-muted items-center justify-center border-dashed border-gray-300 p-4 rounded-xl`}
                 >
                   <CloudUploadIcon strokeWidth={1} />
                   <h1 className="text-sm font-medium text-gray-600">

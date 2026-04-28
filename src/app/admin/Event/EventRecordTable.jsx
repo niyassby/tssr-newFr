@@ -88,12 +88,12 @@ function EventRecordTable({ eventId }) {
             </div>
 
             {/* Table wrapper */}
-            <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
+            <div className="rounded-xl border bg-background overflow-hidden">
                 <Table className="border-b">
                     {records.length === 0 && !isLoading && !isError && (
                         <TableCaption className="mb-4 text-center pb-4 text-gray-500">No registration records found for this event.</TableCaption>
                     )}
-                    <TableHeader className="bg-gray-50/50 dark:bg-zinc-900/50">
+                    <TableHeader >
                         <TableRow>
                             <TableHead className="w-[120px]">Reg. No</TableHead>
                             <TableHead>Participant</TableHead>
@@ -122,7 +122,7 @@ function EventRecordTable({ eventId }) {
                             </TableRow>
                         ) : (
                             records.map((record) => (
-                                <TableRow key={record._id} className="group hover:bg-gray-50/50 transition-colors">
+                                <TableRow key={record._id} className="group   transition-colors">
                                     <TableCell className="font-medium whitespace-nowrap">
                                         {record.participantData?.regNo || 'N/A'}
                                     </TableCell>

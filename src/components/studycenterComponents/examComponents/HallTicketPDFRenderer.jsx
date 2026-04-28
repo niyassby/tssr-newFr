@@ -1,9 +1,6 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Svg } from '@react-pdf/renderer';
 import { format } from 'date-fns';
-import QRCode from 'qrcode'
-
-// Import images
 import head from "../../../assets/PdfHead.png"
 import logo from '../../../assets/Logo.png'
 import sealimg from '../../../assets/sealpng.png'
@@ -51,18 +48,8 @@ const instructions = [
     'When the candidate has finished writing he/she shall stand up in the place may collect the answer book.'
 ];
 
-export const HallTicketPDFDocument = ({ studentData }) => {
-    // Use a third-party API to render the QR Code into a standard image, since react-pdf doesn't support <QRCodeSVG>
-    // const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(url + "/ht-verification/" + studentData?.registrationNo)}`;
-    const qrCodeDataURL = QRCode.toDataURL(url + "/ht-verification/" + studentData?.registrationNo, {
-        errorCorrectionLevel: 'M',
-        type: 'image/png',
-        margin: 0,
-        color: {
-            dark: '#000000ff',
-            light: '#ffffffff'
-        }
-    });
+export const HallTicketPDFDocument = ({ studentData, qrCodeUrl }) => {
+    // We expect qrCodeUrl to be pre-generated as react-pdf doesn't support rendering promises locally
 
     return (
         <Document>
@@ -100,7 +87,7 @@ export const HallTicketPDFDocument = ({ studentData }) => {
                                 <View style={styles.profileImg} />
                             )}
                             <View style={styles.qrContainer}>
-                                <Image src={qrCodeDataURL} style={styles.qrImage} />
+                                <Image src={qrCodeUrl} style={styles.qrImage} />
                                 <Text style={styles.qrText}>Scan and verify</Text>
                             </View>
                         </View>

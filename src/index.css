@@ -171,8 +171,15 @@
   background-color: var(--color-sidebar-primary);
   color: var(--background);
 }
+.dark .NavLinkAdmin .active{
+  background-color: var(--color-sidebar-primary);
+  color: var(--sidebar-primary-foreground);
+}
 .NavLinkAdmin .active:hover{
   background-color: var(--color-violet-600);
+}
+.dark .NavLinkAdmin .active:hover{
+  background-color: var(--color-sidebar-primary);
 }
 
 

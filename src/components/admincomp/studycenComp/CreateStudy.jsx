@@ -118,12 +118,12 @@ function CreateStudy() {
           </p>
         </div>
         <div className="flex items-end gap-2 py-3 mt-5">
-        <div className="size-32 border rounded-full overflow-hidden">
-                <img
+        <div className="size-32 border rounded-full overflow-hidden bg-accent">
+                {file && <img
                   src={file? URL.createObjectURL(file) : "/images/default.jpg"}
                   className="w-full h-full object-cover"
                   alt=""
-                />
+                />}
               </div>
         <div className="flex flex-col items-start">
                 <input

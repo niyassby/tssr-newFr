@@ -11,7 +11,7 @@ function AllCourse({data, setSelected}) {
           <Card  key={i} className='  overflow-hidden pt-0 hover:shadow-lg shadow transition-all duration-300'>
             <CardHeader className='relative  py-4 border-b'>
               <CardTitle className='capitalize'>{item.name?.toLowerCase()}</CardTitle>
-              <CardDescription>Category : <span className='text-black capitalize'>{item?.category?.toLowerCase()}</span></CardDescription>
+              <CardDescription>Category : <span className='text-foreground capitalize'>{item?.category?.toLowerCase()}</span></CardDescription>
               <div className='absolute top-4 right-5'>
                 <BookOpen02Icon size={20} strokeWidth={1} className='text-muted-foreground'/>
               </div>

@@ -7,8 +7,10 @@ import {
   CreditCard,
   Info,
   LogOut,
+  Moon,
   Settings,
   Sparkles,
+  Sun,
 } from "lucide-react"
 
 import {
@@ -34,9 +36,11 @@ import {
 import { useAuth } from "@/Context/authContext"
 import { authService } from "@/API/services/authService"
 import { useNavigate } from "react-router-dom"
+import { useTheme } from "@/Context/theme-provider"
 
 export function NavUser() {
   const { isMobile } = useSidebar()
+  const {setTheme,theme}=useTheme()
   const {user, setUser}=useAuth()
   const navigate = useNavigate()
 
@@ -90,13 +94,13 @@ export function NavUser() {
                 <Settings />
                 Settings
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={()=>navigate('/admin')}>
-                <Info />
-                Riport
-              </DropdownMenuItem>
               <DropdownMenuItem onClick={()=>navigate('/admin/notifications')}>
                 <Bell />
                 Notifications
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={()=>setTheme(theme==='dark'?'light':'dark')}>
+                {theme==='dark'?<Sun />:<Moon />}
+                Toggle Theme
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />

@@ -85,7 +85,6 @@ function ViewEvent() {
           <Button
             variant="outline"
             size="icon"
-            className="shadow-sm border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden"
             onClick={() => navigate(-1)}
           >
             <ArrowLeft className="w-4 h-4" />

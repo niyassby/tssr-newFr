@@ -194,7 +194,7 @@ export function DocDownload({ name, fields= [], mark, date, isLong }) {
           >
             <div
               ref={dialogRef}
-              className="w-full space-y-2 max-w-sm p-6 bg-white rounded-lg shadow-md relative"
+              className="w-full space-y-2 max-w-sm p-6 bg-background border rounded-lg shadow-md relative"
             >
               <div
                 onClick={() => setIsOpen(false)}

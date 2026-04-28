@@ -190,7 +190,7 @@ export function AppSidebar({
                   <img className="w-32" src={logo} alt="" />
                 </div> */}
                 <div
-                  className="border p-0.5 text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
+                  className="border p-0.5 bg-white text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                   <img className="w-full" src={logo} alt="" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">

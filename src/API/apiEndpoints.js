@@ -131,9 +131,6 @@ export const API_ENDPOINTS = {
     EDIT_POST: "/api/gallery/editGallery",
     DELETE_POST: "/api/gallery/deleteGallery",
   },
-  PDF: {
-    DL_PDF: "/api/pdf/generate-pdf",
-  },
   EVENT: {
     CREATE_EVENT: "/api/events/create",
     GET_ALL_EVENTS: "/api/events/getAllEvents",

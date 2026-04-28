@@ -235,7 +235,7 @@ function AddNewStaff() {
           </div>
 
           <div className="pb-2 border-b">
-            <h1 className="text-xl font-medium text-gray-800">Personel info</h1>
+            <h1 className="text-xl font-medium ">Personel info</h1>
           </div>
 
           {/* Text Inputs */}
@@ -328,7 +328,7 @@ function AddNewStaff() {
             </div>
           </div>
           <div className="pb-2 border-b">
-            <h1 className="text-xl font-medium text-gray-800">Academic info</h1>
+            <h1 className="text-xl font-medium ">Academic info</h1>
           </div>
           <FormInput error={error && staff.qualification === ''} name="qualification" label="Qualification" value={staff.qualification} onChange={handleChange} />
           <FormInput error={error && staff.designation === ''} name="designation" label="Designation" value={staff.designation} onChange={handleChange} />

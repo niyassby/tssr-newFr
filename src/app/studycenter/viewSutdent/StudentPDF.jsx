@@ -1,25 +1,15 @@
 import React, { forwardRef, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import header from "../../../assets/pdfHead.svg";
 import logo from "../../../assets/Logo.svg";
 import {
   User,
   Phone,
-  Mail,
-  MapPin,
   GraduationCap,
-  FileText,
-  Award,
   Printer,
-  Loader2,
 } from "lucide-react";
-import { format } from "date-fns";
 import { formateDateToIST } from "@/lib/formateDate";
-import { usePDF } from "@/hooks/tanstackHooks/usePdf";
-import { toast } from "sonner";
-import { saveAs } from "file-saver";
 
 const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString("en-IN", {
@@ -255,12 +245,6 @@ export default function StudentPDF({ studentData }) {
         size: A4;
         margin: 0.3in;
       }
-      @media print {
-        body {
-          -webkit-print-color-adjust: exact;
-          color-adjust: exact;
-        }
-      }
     `,
   });
 
@@ -273,32 +257,16 @@ export default function StudentPDF({ studentData }) {
     }, 100)
   }
 
-
-  const {mutate, isPending}=usePDF() 
- 
-  const handleDownload = () => {
-    const componentHTML = componentRef.current.outerHTML;
-    mutate({html:componentHTML }, {
-      onSuccess: (data) => {
-        if(!data.status === 200){
-          return toast.error("Something went wrong")
-        }
-        saveAs(data?.data, "student-profile.pdf");
-    }
-    })
-  }
+  
   return (
     <div className="">
       <div className="">
         <div className="flex items-center gap-3">
-        {/* <Button onClick={handleDownload} disabled={isPending}  variant='outline'>{isPending? <Loader2 className='animate-spin'/>:"Download"}</Button> */}
           <Button variant="outline" className=' bg-transparent' onClick={handlePrint}>
             <Printer className="w-5 h-5" />
-            {/* Print Data */}
           </Button>
         </div>
         <div className="bg-white rounded-lg invisible absolute print:visible inset-0 shadow-2xl overflow-hidden">
-          {/* <div ref={componentRef}>asdfdf</div> */}
           <StudentCertificate ref={componentRef} studentData={studentData} />
         </div>
       </div>

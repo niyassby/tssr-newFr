@@ -119,7 +119,7 @@ export const ResultData = forwardRef(({ data, className }, ref) => {
 
             <div className="absolute w-full bottom-0 left-0">
               {/* Signatures */}
-              <div className="flex justify-between  text-sm text-muted-foreg round">
+              <div className="flex justify-between text-black  text-sm text-muted-foreg round">
                 <p>Principal Signature</p>
                 <img
                   className="absolute  right-0 bottom-12  size-24 -rotate-45  mix-blend-multiply"
@@ -132,7 +132,7 @@ export const ResultData = forwardRef(({ data, className }, ref) => {
               </div>
 
               {/* Footer */}
-              <div className="text-center text-[11px] mt-5 border-2 ring ring-offset-2 border-gray-900 px-2 py-1">
+              <div className="text-center text-black text-[11px] mt-5 border-2 ring ring-offset-2 border-gray-900 px-2 py-1">
                 <p>
                   ISSUED BY TSSR COUNCIL, OFFICE OF THE CENTRAL BOARD OF
                   EXAMINATION

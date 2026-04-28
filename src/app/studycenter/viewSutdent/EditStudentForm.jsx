@@ -276,16 +276,16 @@ export function EditStudentForm( ) {
     }
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 md:p-6 lg:p-8 shadow-lg bg-white rounded-2xl border">
+    <div className="w-full max-w-4xl mx-auto p-4 md:p-6 lg:p-8 shadow-lg bg-background rounded-2xl border">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-800">Student Edit Form</h1>
-        <p className="text-gray-600 mt-1">Please fill all required fields</p>
+        <h1 className="text-2xl font-bold ">Student Edit Form</h1>
+        <p className="text-muted-foreground mt-1">Please fill all required fields</p>
       </div>
 
       <div className="space-y-8">
         {/* PERSONAL SECTION */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+          <h2 className="text-lg font-semibold  mb-4">
             Personal Information
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
@@ -408,10 +408,18 @@ export function EditStudentForm( ) {
 
         {/* ADDRESS SECTION */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+          <h2 className="text-lg font-semibold  mb-4">
             Address Information
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <FormInput
+              label="Parent Name"
+              id="parentName"
+              name="parentName"
+              value={formData.parentName}
+              onChange={handleChange}
+              error={errors.parentName}
+            />
             <div className="space-y-2">
               <Label>State</Label>
               <Select onValueChange={handleStateChange} value={formData?.state}>
@@ -489,18 +497,11 @@ export function EditStudentForm( ) {
 
         {/* EDUCATION SECTION */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+          <h2 className="text-lg font-semibold  mb-4">
             Education Information
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FormInput
-              label="Parent Name"
-              id="parentName"
-              name="parentName"
-              value={formData.parentName}
-              onChange={handleChange}
-              error={errors.parentName}
-            />
+            
             <FormInput
               label="Qualification"
               id="qualification"
@@ -515,7 +516,7 @@ export function EditStudentForm( ) {
                 htmlFor="sslc"
                 className={`${
                   errors.sslc && formData.sslc == null ? "border-red-500" : ""
-                } w-full py-7 border flex flex-col gapy-2 cursor-pointer hover:border-primary transition-all duration-200 hover:bg-primary-foreground items-center justify-center border-dashed border-gray-300 p-4 rounded-xl`}
+                } w-full py-7 border flex flex-col gapy-2 cursor-pointer hover:border-primary transition-all duration-200 hover:bg-primary-foreground dark:hover:bg-muted items-center justify-center border-dashed border-gray-300 p-4 rounded-xl`}
               >
                 <>
                     <CloudUploadIcon strokeWidth={1} />

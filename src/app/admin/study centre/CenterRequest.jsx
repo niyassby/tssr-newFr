@@ -44,7 +44,7 @@ function CenterRequest() {
   return ( 
     <div>
       <div>
-        <h1 className='text-2xl font-bold text-gray-700'>ATC Requests</h1>
+        <h1 className='text-2xl font-bold '>ATC Requests</h1>
       </div>
       {data?.data.length >0 ? <div className='border rounded-xl overflow-hidden mt-6'>
         <ATCreqTable onAccept={handleAccept} onReject={handleReject}  data={data?.data || []}/>

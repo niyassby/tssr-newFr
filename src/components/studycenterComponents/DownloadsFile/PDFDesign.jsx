@@ -225,6 +225,7 @@ function PDFDesign({ headers=[], marks, data=datas, date=false , name, isLong=fa
           const rowLast = index === array.length - 1;
           return (
             <div
+              key={index}
               className={`w-full grid ${isHeader?"grid-cols-12" : "grid-cols-10"} ${
                 !rowLast && "border-b"
               } border-black/70 `}

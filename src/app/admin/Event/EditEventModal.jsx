@@ -109,8 +109,8 @@ export function EditEventModal({ event, isOpen, onClose }) {
     }
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 animate-in fade-in duration-300">
-            <div className="max-w-xl w-full max-h-[90vh] overflow-y-auto bg-white p-6 rounded-lg">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 animate-in fade-in duration-300">
+            <div className="max-w-xl w-full max-h-[90vh] overflow-y-auto bg-background border shadow-lg p-6 rounded-lg">
                 <div>
                     <h1 className="text-xl font-medium">Edit Event</h1>
                 </div>

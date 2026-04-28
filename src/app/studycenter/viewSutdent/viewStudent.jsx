@@ -83,7 +83,10 @@ export function ViewStudent() {
   return (
     <div className=" w-full h-full">
       <div className="md:space-y-6 space-y-5 w-full h-full">
-          <h1 className="text-xl font-medium text-neutral-800">Students Data</h1>
+        <div>
+          <h1 className="text-2xl font-medium text-foreground">Students Data</h1>
+          <p className="text-sm text-muted-foreground">Manage all students data in one place</p>
+        </div>
           <div className="flex justify-between items-center max-sm:flex-col gap-2">
           <Input
             value={search}
@@ -109,7 +112,7 @@ export function ViewStudent() {
           </div>
           </div>
 
-        <div className={`w-full flex border border-accent bg-neutral-100 items-center px-3 rounded-xl max-md:flex-col justify-center md:justify-between gap-2 transition-all duration-300 overflow-hidden ${isFilter ? "md:h-16 h-52 visible opacity-100": "h-0 invisible opacity-0"}`}>
+        <div className={`w-full flex border items-center px-3 rounded-xl max-md:flex-col justify-center md:justify-between gap-2 transition-all duration-300 overflow-hidden ${isFilter ? "md:h-16 h-52 visible opacity-100": "h-0 invisible opacity-0"}`}>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-x-4 gap-y-2 w-full max-w- 5xl ">
           <StudentFilter
             courses={course?.data}
@@ -118,7 +121,7 @@ export function ViewStudent() {
             onFilterChange={handleFilterChange}
           />
           <Select onValueChange={(value)=>setPerPage(value)} >
-          <SelectTrigger className={`w-full  bg-white border-accent shadow-none ${user?.role === "admin" && "max-md:col-span-2"} `}>
+          <SelectTrigger className={`w-full   border-accent shadow-none ${user?.role === "admin" && "max-md:col-span-2"} `}>
             <SelectValue placeholder="Select" />
           </SelectTrigger>
           <SelectContent className=' '>

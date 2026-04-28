@@ -14,7 +14,7 @@ export default function NotificationCard() {
   
   if(error || isLoading) return <Loader/>
   return (
-    <Card className="w-full">
+    <Card className="w-full h-full">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
         <div>
           <CardTitle className="text-lg font-semibold">Recent Notifications</CardTitle>
@@ -24,8 +24,8 @@ export default function NotificationCard() {
           <Bell className="h-4 w-4" />
         </Button>
       </CardHeader>
-      <CardContent className="space-y-4">
-        {data && data.data ? data?.data?.slice(0,3).map((notification) => {
+      <CardContent className="space-y-3">
+        {data && data.data ? data?.data?.slice(0,4).map((notification) => {
           return (
             <div
               key={notification._id}
@@ -38,7 +38,7 @@ export default function NotificationCard() {
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-medium text-foreground truncate">{notification.title}</p>
                 </div>
-                <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{notification.description}</p>
+                <p className="text-sm text-muted-foreground mt-1 line-clamp-2 md:truncate">{notification.description}</p>
                 <p className="text-xs text-muted-foreground mt-2">{formatDistanceToNowStrict(new Date(notification.createdAt || 0), { addSuffix: true })}</p>
               </div>
             </div>

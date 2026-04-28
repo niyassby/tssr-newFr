@@ -175,18 +175,18 @@ export function EnrollmentFormUI({ userData, onBack, onNext, setUserData }) {
     const image = formData.profileImage ? URL.createObjectURL(formData.profileImage) : 'https://img.freepik.com/premium-vector/profile-picture-placeholder-avatar-silhouette-gray-tones-icon-colored-shapes-gradient_1076610-40164.jpg';
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 md:p-6 lg:p-8 shadow-lg bg-white rounded-2xl border">
+    <div className="w-full max-w-4xl mx-auto p-4 md:p-6 lg:p-8 shadow-lg bg-background rounded-2xl border">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-800">
+        <h1 className="text-2xl font-bold text-foreground">
           Student Enrollment Form
         </h1>
-        <p className="text-gray-600 mt-1">Please fill all required fields</p>
+        <p className="text-muted-foreground mt-1">Please fill all required fields</p>
       </div>
 
       <div className="space-y-8 ">
         {/* PERSONAL SECTION */}
         <div className="">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+          <h2 className="text-lg font-semibold text-foreground mb-4">
             Personal Information
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
@@ -203,7 +203,7 @@ export function EnrollmentFormUI({ userData, onBack, onNext, setUserData }) {
                       alt=""
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center transition-all justify-center bg-gray-100 hover:bg-gray-200">
+                    <div className="w-full h-full flex items-center transition-all justify-center bg-muted ">
                       <ImageAdd02Icon size={20} />
                     </div>
                   )}
@@ -313,7 +313,7 @@ export function EnrollmentFormUI({ userData, onBack, onNext, setUserData }) {
 
         {/* ADDRESS SECTION */}
         <div className="">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+          <h2 className="text-lg font-semibold  mb-4">
             Address Information
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -401,7 +401,7 @@ export function EnrollmentFormUI({ userData, onBack, onNext, setUserData }) {
 
         {/* EDUCATION SECTION */}
         <div className="">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+          <h2 className="text-lg font-semibold  mb-4">
             Education Information
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -421,7 +421,7 @@ export function EnrollmentFormUI({ userData, onBack, onNext, setUserData }) {
                 htmlFor="sslc"
                 className={`${
                   errors.sslc && formData.sslc == null ? "border-red-500" : ""
-                } w-full py-7 border flex flex-col gapy-2 cursor-pointer hover:border-primary transition-all duration-200 hover:bg-primary-foreground items-center justify-center border-dashed border-gray-300 p-4 rounded-xl`}
+                } w-full py-7 border flex flex-col gapy-2 cursor-pointer hover:border-primary transition-all duration-200 hover:bg-muted items-center justify-center border-dashed border-gray-300 p-4 rounded-xl`}
               >
                 {formData.sslc ? (
                   <h1 className="text-sm font-medium">{formData.sslc.name}</h1>

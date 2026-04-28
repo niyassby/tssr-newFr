@@ -16,13 +16,13 @@ function CoursesStudyCente() {
           <Tabs defaultValue="Active" className="w-full mt-5">
         <TabsList className="h-11 space-x-2 bg-transparent">
           <TabsTrigger
-            className="bg-zinc-100 px-3 data-[state=active]:bg-primary data-[state=active]:text-secondary cursor-pointer"
+            className="bg-muted px-3 data-[state=active]:bg-primary data-[state=active]:text-secondary cursor-pointer"
             value="Active"
           >
             Availabel
           </TabsTrigger>
           <TabsTrigger
-            className="bg-zinc-100 px-3 data-[state=active]:bg-primary data-[state=active]:text-secondary cursor-pointer"
+            className="bg-muted px-3 data-[state=active]:bg-primary data-[state=active]:text-secondary cursor-pointer"
             value="schedule"
           >
             Request

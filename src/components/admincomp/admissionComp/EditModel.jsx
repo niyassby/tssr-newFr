@@ -78,7 +78,7 @@ export const CustomDialog = ({ isOpen, onClose, data, schedul}) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/50 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/70 transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0"
         }`}
         onClick={onClose}
@@ -86,23 +86,23 @@ export const CustomDialog = ({ isOpen, onClose, data, schedul}) => {
 
       {/* Dialog container */}
       <div
-        className={`relative z-10 p-4 md:p-6 rounded-lg h-auto w-[420px] bg-white shadow-xl transition-all duration-300 ${
+        className={`relative z-10 p-4 md:p-6 border rounded-lg h-auto w-[420px] bg-background shadow-xl transition-all duration-300 ${
           isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
       >
         {/* Header */}
         <div >
-          <h3 className="text-lg font-semibold text-gray-900">Edit date</h3>
+          <h3 className="text-lg font-semibold text-foreground">Edit date</h3>
           <p className="text-sm text-muted-foreground">Custom date for selected batch</p>
         </div>
 
         {/* Content */}
         <div className="mt-5 space-y-2">
-            <h1 className="text-sm font-medium text-gray-900">Select Date</h1>
+            <h1 className="text-sm font-medium text-foreground">Select Date</h1>
           <DatePickerWithRange date={date} setDate={setDate} />
         </div>
         <div className="mt-5 space-y-2">
-            <h1 className="text-sm font-medium text-gray-900">Select Date</h1>
+            <h1 className="text-sm font-medium text-foreground">Select Date</h1>
             <Select onValueChange={(value) => setYear(value)}>
                 <SelectTrigger className={`w-full bg-background shadow-none py-5 `}>
                   <SelectValue placeholder="Select a Year" />

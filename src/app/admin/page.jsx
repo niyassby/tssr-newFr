@@ -15,10 +15,14 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { Outlet } from "react-router-dom"
+import { ModeToggle } from "@/components/ui/theme-toggle"
+import { Outlet, useLocation } from "react-router-dom"
+import { formatCrumbName } from "../studycenter/PageForStudyCenter"
 
 export default function Page() {
    const {notificationCount}=useNotificationCount()
+   const location = useLocation();
+  const burdCrumb = location.pathname.split('/')
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -30,19 +34,22 @@ export default function Page() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink to="/">
+                  <BreadcrumbLink to="/admin">
                     Home
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Admin Dashboard</BreadcrumbPage>
+                 <BreadcrumbItem>
+                  <BreadcrumbPage>
+                  {formatCrumbName(burdCrumb[2]  || burdCrumb[1])}
+                  </BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </div>
-          <div className="relative">
+          <div className="relative space-x-2">
             <NewNotifications/>
+            <ModeToggle/>
             {notificationCount > 0 &&<div className="absolute -top-1.5 -right-1.5 ">
             <div className="text-white text-xs grid bg-red-500  rounded-full size-5 place-content-center animate-pulse">{notificationCount}</div>
             </div>}

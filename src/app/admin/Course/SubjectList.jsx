@@ -19,6 +19,7 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
+import { Library, Search, Plus, BookX } from "lucide-react";
 
 export default function SubjectList() {
   const [subjects, setSubjects] = useState([]);
@@ -50,7 +51,6 @@ export default function SubjectList() {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!search) {
-        // 👈 reset when empty
         setSubjects(allSubjects);
         return;
       }
@@ -98,7 +98,6 @@ export default function SubjectList() {
   };
 
   const handleToggle = (code, newState) => {
-    // Find the subject by code to get its id
     const subject = subjects.find((subj) => subj.code === code);
     if (!subject) {
       toast.error("Subject not found");
@@ -110,14 +109,12 @@ export default function SubjectList() {
         onSuccess: (res) => {
           if (res.success) {
             toast.success(
-              `Subject ${res?.data?.name} is now ${newState ? "Active" : "Inactive"
-              }`
+              `Subject ${res?.data?.name} is now ${newState ? "Active" : "Inactive"}`
             );
           } else {
             toast.error("Failed to update subject status");
           }
 
-          // Update local state with new isActive status
           setSubjects((prev) =>
             prev.map((subj) =>
               subj.id === res.id
@@ -134,7 +131,6 @@ export default function SubjectList() {
   };
 
   const handleAddSubject = (name, code) => {
-    // Generate a simple id (ideally your backend should handle this)
     const newId = subjects.length
       ? Math.max(...subjects.map((s) => s.id)) + 1
       : 1;
@@ -142,19 +138,42 @@ export default function SubjectList() {
   };
 
   return (
-    <section className="p-6 space-y-6">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row items-start  sm:items-center justify-between gap-4">
-        <div className="gap-2 flex flex-col w-full max-w-md ">
-          <h2 className="text-2xl font-semibold tracking-tight text-primary">
-            Subjects
-          </h2>
-          <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search subject" className='w-full max-w-md' />
-        </div>
-        <div className="space-x-1">
+    <section className="w-full space-y-6">
+      {/* Header Section */}
+      <div className="relative overflow-hidden rounded-2xl border bg-card p-6 md:p-8 shadow-sm">
+        <div className="absolute top-0 right-0 p-32 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
-          {/* <Button variant='outline' onClick={() => navigate(-1)}>Back</Button> */}
-          <Button onClick={() => setDialogOpen(true)}>Add Subject</Button>
+        <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-start justify-between">
+          <div className="space-y-4 max-w-2xl">
+            <div className="flex items-center gap-3">
+              <div className="p-3 bg-primary/10 rounded-xl">
+                <Library className="w-8 h-8 text-primary" />
+              </div>
+              <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-foreground">Course Subjects</h1>
+            </div>
+
+            <p className="text-muted-foreground mt-2 text-sm md:text-base leading-relaxed">
+              Manage your institution's subjects curriculum. Add new subjects, update codes, and toggle active status availability for courses.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+              <div className="relative w-full sm:w-80">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Input
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search subject by name or code..."
+                  className="pl-9 h-10 bg-background"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 self-start max-md:mt-2 shrink-0">
+            <Button onClick={() => setDialogOpen(true)} className="gap-2 shrink-0 cursor-pointer shadow-sm hover:shadow">
+              <Plus className="w-4 h-4" /> Add Subject
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -217,17 +236,31 @@ export default function SubjectList() {
       </Dialog>
 
       {/* Subject Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {subjects.map((subject) => (
-          <SubjectCard
-            key={subject.code}
-            name={subject.name}
-            code={subject.code}
-            isActive={subject.isActive}
-            onToggle={(newState) => handleToggle(subject.code, newState)}
-            onEdit={() => handleEditClick(subject)}
-          />
-        ))}
+      <div className="rounded-2xl border bg-card/50 p-6 md:p-8">
+        <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+          Available Subjects <span className="text-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary">{subjects.length}</span>
+        </h2>
+
+        {subjects.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {subjects.map((subject) => (
+              <SubjectCard
+                key={subject.code}
+                name={subject.name}
+                code={subject.code}
+                isActive={subject.isActive}
+                onToggle={(newState) => handleToggle(subject.code, newState)}
+                onEdit={() => handleEditClick(subject)}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="py-16 text-center border-2 border-dashed rounded-xl text-muted-foreground flex flex-col items-center justify-center gap-3">
+            <BookX className="w-12 h-12 text-muted-foreground/50" />
+            <p className="font-medium text-foreground">No subjects found</p>
+            <p className="text-sm text-muted-foreground">We couldn't find any subjects matching your criteria.</p>
+          </div>
+        )}
       </div>
     </section>
   );

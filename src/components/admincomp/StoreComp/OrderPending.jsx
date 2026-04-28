@@ -100,7 +100,7 @@ const OrderPending = () => {
           <TableBody>
             {isLoading ? (
               <TableRow>
-                <TableCell colSpan={7}>
+                <TableCell colSpan={8}>
                   <div className="flex justify-center items-center h-48 w-full">
                     <Loader2 className="animate-spin h-6 w-6 text-muted-foreground" />
                   </div>
@@ -109,7 +109,7 @@ const OrderPending = () => {
             ) : orders.length === 0 ? (
               <TableRow>
                 <TableCell
-                  colSpan={7}
+                  colSpan={8}
                   className="text-center py-6 text-muted-foreground"
                 >
                   No pending orders found.

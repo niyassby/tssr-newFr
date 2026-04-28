@@ -100,7 +100,7 @@ function Events() {
         </Button>
       </div>
 
-      <div className="rounded-xl border bg-white overflow-hidden">
+      <div className="rounded-xl border bg-background overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow>

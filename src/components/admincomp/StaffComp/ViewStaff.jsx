@@ -91,16 +91,16 @@ export default function VaulDrawer({data}) {
           // The gap between the edge of the screen and the drawer is 8px in this case.
           style={{ '--initial-transform': 'calc(100% + 8px)' }}
         >
-          <div className="bg-zinc-50 h-full w-full grow p-5 flex flex-col rounded-[16px]">
+          <div className="bg-zinc-50 dark:bg-muted h-full w-full grow p-5 flex flex-col rounded-[16px]">
             <div className=" flex flex-col items-center justify-center  ">
                 <img className='size-36 mt-5 rounded-full border object-cover' src={data?.profileImage} alt="" />
-              <Drawer.Title className="font-medium mt-3 text-zinc-900">{data.name}</Drawer.Title>
-              <Drawer.Description className="text-zinc-600 mb-3 text-sm">{data?.staffId}
+              <Drawer.Title className="font-medium mt-3 text-foreground">{data.name}</Drawer.Title>
+              <Drawer.Description className="text-foreground mb-3 text-sm">{data?.staffId}
               </Drawer.Description>
               <Separator decorative className='mb-4'/>
               <div className='w-full space-y-2 mb-4'>
                 <div className='mb-4'>
-                    <h1 className='font-medium text-zinc-900 '>Personal Details</h1>
+                    <h1 className='font-medium text-foreground '>Personal Details</h1>
                 </div>
                 <StaffDatils label={"Name"} value={data?.name}/>
                 <StaffDatils label={"Age"} value={`${data?.age} years`}/>
@@ -112,7 +112,7 @@ export default function VaulDrawer({data}) {
               <Separator decorative className='mb-4'/>
               <div className='w-full space-y-2 mb-4'>
                 <div className='mb-4'>
-                    <h1 className='font-medium text-zinc-900 '>Contact Details</h1>
+                    <h1 className='font-medium text-foreground '>Contact Details</h1>
                 </div>
                 <StaffDatils label={"Phone Number"} value={data?.phoneNumber}/>
                 <StaffDatils label={"Email"} value={data?.email}/>
@@ -123,7 +123,7 @@ export default function VaulDrawer({data}) {
               <Separator decorative className='mb-4'/>
               <div className='w-full space-y-2 mb-4'>
                 <div className='mb-4'>
-                    <h1 className='font-medium text-zinc-900 '>Other Info</h1>
+                    <h1 className='font-medium text-foreground '>Other Info</h1>
                 </div>
                 <StaffDatils label={"Qualification"} value={data?.qualification}/>
                 <StaffDatils label={"Department"} value={data?.department}/>
@@ -143,8 +143,8 @@ export default function VaulDrawer({data}) {
 function StaffDatils({label, value}) {
   return (
     <div className='grid grid-cols-5 gap-4 w-full '>
-        <h1 className='col-span-2 text-sm text-neutral-500 '>{label}</h1>
-        <h1 className='col-span-3 text-sm text-neutral-900 font-medium capitalize'>{value}</h1>
+        <h1 className='col-span-2 text-sm text-muted-foreground '>{label}</h1>
+        <h1 className='col-span-3 text-sm text-foreground font-medium capitalize'>{value}</h1>
     </div>
   )
 }

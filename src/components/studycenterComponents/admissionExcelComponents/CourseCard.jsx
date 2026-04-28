@@ -28,7 +28,7 @@ export function CourseCard({ batch, onIndividual, setCourse, onBulk }) {
     onBulk();
   }
   return (
-    <Card className="w-full  bg-white pt-0 rounded-2xl shadow-none transition-all hover:shadow-md">
+    <Card className="w-full  bg-background pt-0 rounded-2xl shadow-none transition-all hover:shadow-md">
       <CardHeader className="bg-primary text-white rounded-t-2xl p-5">
         <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight">
           {name}
@@ -41,15 +41,15 @@ export function CourseCard({ batch, onIndividual, setCourse, onBulk }) {
       <CardContent className="p-5 space-y-2">
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground font-medium">Category</span>
-          <span className="text-gray-800 font-semibold">{category}</span>
+          <span className=" font-semibold">{category}</span>
         </div>
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground font-medium">Duration</span>
-          <span className="text-gray-800 font-semibold">{duration}</span>
+          <span className=" font-semibold">{duration}</span>
         </div>
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground font-medium">Batch</span>
-          <span className="text-gray-800 font-bold text-lg">{batch.month}</span>
+          <span className=" font-bold text-lg">{batch.month}</span>
         </div>
         <div className="mt-2 text-muted-foreground flex text-sm justify-between">
           <span className="text-muted-foreground font-medium">Last Date</span>

@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/Context/authContext";
 import { Input } from "@/components/ui/input";
+import SearchSelect from "@/components/ui/SearchSelect";
 
 const currentYear = new Date().getFullYear()+1;
 const oldYears = Array.from({ length: 16 }, (_, i) => currentYear - i);
@@ -22,7 +23,7 @@ function StudentFilter({ filters, onFilterChange, courses , studycenter}) {
     // <div className="w-full flex max-md:fle x-col items-end justify-between gap-2 rounded-xl">
       <>
         {user?.role === "admin" &&
-        <SelctFilter
+        <SearchSelect
         data={studycenter || []}
         isObject
         text={"Select Centre"}
@@ -30,36 +31,37 @@ function StudentFilter({ filters, onFilterChange, courses , studycenter}) {
         onChange={(value) => {
           onFilterChange("studyCentre", value)
         }}
-        lebal={"Study Centre"}
       />
         }
-      <SelctFilter
+      <SearchSelect
         data={courses || []}
         isObject
         text={"Select Course"}
         value={filters.course}
         onChange={(value) => {
+          if (!value) {
+              setBatches([]);
+              onFilterChange("course", "");
+              return;
+            }
           const batch = courses.find((item) => item.courseId === value)?.batches;
           setBatches(batch);
           onFilterChange("course", value)
         } }
-        lebal={"Course"}
       />
-      <SelctFilter
+      <SearchSelect
         disabled={batches.length === 0}
         data={batches}
         isObject
         text={"Select Batch"}
         value={filters.batch}
         onChange={(value) => onFilterChange("batch", value)}
-        lebal={"Batch"}
       />
-      <SelctFilter
+      <SearchSelect
         data={oldYears}
         text={"Select Year"}
         value={filters.year}
         onChange={(value) => onFilterChange("year", value)}
-        lebal={"Year"}
       />
       </>
     // </div>
@@ -106,7 +108,7 @@ function SelctFilter({ data, lebal, text, value, onChange, isObject = false, dis
     <div className="space-y-1">
       {/* <h1 className=" text-sm font-medium">{lebal}</h1> */}
       <Select  value={value} onValueChange={onChange} disabled={disabled} >
-        <SelectTrigger className="w-full  shadow-none bg-white border-accent ">
+        <SelectTrigger className="w-full  shadow-none border-accent ">
           <SelectValue placeholder={text} />
         </SelectTrigger>
         <SelectContent

@@ -27,6 +27,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { toast } from 'sonner'
+import { useNavigate } from 'react-router-dom'
 
 const formSchema = z.object({
     eventName: z.string().min(2, { message: "Event Name must be at least 2 characters." }),
@@ -72,6 +73,7 @@ function CreateEvent() {
             onSuccess: () => {
                 toast.success("Event created successfully")
                 form.reset()
+                navigate('/admin/event')
             },
             onError: (error) => {
                 toast.error(error?.message)
@@ -85,8 +87,15 @@ function CreateEvent() {
         onChange(newStruct);
     }
 
+    const navigate = useNavigate()
+
+    const handleBack = () => {
+        form.reset()
+        navigate('/admin/event')
+    }
+
     return (
-        <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-sm border mt-8">
+        <div className="max-w-3xl mx-auto p-6 bg-background rounded-lg shadow-sm border mt-8">
             <h2 className="text-2xl font-medium">Create Event</h2>
             <h4 className="text-sm mb-6 text-muted-foreground">Schedule new event with all the details</h4>
 
@@ -277,7 +286,7 @@ function CreateEvent() {
                     </div>
 
                     <div className="flex justify-end pt-4 gap-3">
-                        <Button type="button" variant="outline" className="w-full md:w-auto">
+                        <Button onClick={handleBack} type="button" variant="outline" className="w-full md:w-auto">
                             Cancel
                         </Button>
                         <Button type="submit" className="w-full md:w-auto">

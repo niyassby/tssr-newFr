@@ -104,7 +104,7 @@ export default function CustomDatePicker({
       {open && (
         <div
           ref={popoverRef}
-          className="absolute z-50 mt-2 bg-white border border-gray-200 rounded-md shadow-md p-2"
+          className="absolute z-50 mt-2 bg-background border rounded-md shadow-md p-2"
         >
           
 

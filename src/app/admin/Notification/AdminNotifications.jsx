@@ -12,7 +12,7 @@ function AdminNotifications() {
   return (
     <div className="w-full max-w-[65rem] mx-auto">
       <div className="flex items-center justify-between mb-10">
-        <h1 className="text-2xl font-bold text-gray-800">Notifications</h1>
+        <h1 className="text-2xl font-bold ">Notifications</h1>
         <div onClick={manageNotificationNav}>
           <Button>Manage Notifications</Button>
         </div>

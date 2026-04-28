@@ -149,7 +149,7 @@ export default function StaffPDF({ data }) {
   return (
     <div className="">
       <div className=" ">
-        <Button className='w-full bg-foreground hover:bg-foreground/80 cursor-pointer' onClick={handlePrint}>
+        <Button className='w-full  cursor-pointer' onClick={handlePrint}>
           <Printer className="w-5 h-5 " />
           Print Data
         </Button>

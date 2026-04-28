@@ -116,7 +116,7 @@ const allValid = newStudents.every(
     <>
       <div className="">
         <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-semibold text-gray-700">Students Data</h1>
+        <h1 className="text-2xl font-semibold ">Students Data</h1>
         <Button size='icon' variant='outline' onClick={onBack}>
           <ArrowLeft/>
         </Button>
@@ -138,11 +138,11 @@ const allValid = newStudents.every(
                 <div className="flex items-center space-x-2">
 
                 <Check size={16}/>
-                <h1 className="text-base font-semibold text-gray-700 ">{item.head}</h1>
+                <h1 className="text-base font-semibold  ">{item.head}</h1>
                 </div>
                 {item.items.map((item, index) => {
                   return (
-                    <p key={index} className="text-sm  text-gray-600">
+                    <p key={index} className="text-sm  text-muted-foreground">
                       - {item}
                     </p>
                   );
@@ -151,7 +151,7 @@ const allValid = newStudents.every(
             )
           })}
           <h1 className="text-base font-semibold mt-5">After uploading all required files for a student, you must</h1>
-          <div className="text-gray-600">
+          <div className="text-muted-foreground">
           <p>Ensure all uploaded files are clear and correct.</p>
           <p>Double-check that student information matches the documents.</p>
           <p>Read and agree the Student Declaration.</p>
@@ -198,10 +198,10 @@ const allValid = newStudents.every(
         {(newStudents.length > 0 || pendingEnrollmentStudents.length > 0) && (
           <div>
             <div className="mt-5 border-t py-4">
-              <h1 className="text-lg font-semibold text-gray-700 ">
+              <h1 className="text-lg font-semibold ">
                 Student,s Declaration
               </h1>
-              <p className="text-sm text-gray-600 mt-1 max-w-4xl">
+              <p className="text-sm text-muted-foreground mt-1 max-w-4xl">
                 Hereby solemnly declare that the above information provided by
                 me are true to the best of my knowledge and belief. I shall obey
                 the rules and regulation of TSSR COUNCIL study centre, now in

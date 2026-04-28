@@ -110,11 +110,11 @@ const CourseSelectionComp = ({ userData, onBack, onBack2, course }) => {
     <div className=" max-w-4xl mx-auto ">
       {/* Student Info Card */}
       <Card className="w-full shadow-xl rounded-2xl">
-        <CardHeader className="pb-4 border-b border-gray-200 px-6 pt-1">
-          <CardTitle className="text-3xl font-semibold text-gray-800">
+        <CardHeader className="pb-4 border-b px-6 pt-1">
+          <CardTitle className="text-3xl font-semibold ">
             Student Details
           </CardTitle>
-          <CardDescription className="text-gray-600 mt-1">
+          <CardDescription className="text-muted-foreground mt-1">
             Review the student information below before proceeding.
           </CardDescription>
         </CardHeader>
@@ -123,7 +123,7 @@ const CourseSelectionComp = ({ userData, onBack, onBack2, course }) => {
           <div className="flex flex-col  gap-6">
             {/* Avatar */}
             <div className="flex max-md:flex-col md:items-end gap-5 border-b pb-5">
-              <Avatar className="size-28 md:size-32 object-cover rounded-full border border-gray-300 overflow-hidden">
+              <Avatar className="size-28 md:size-32 object-cover rounded-full border  overflow-hidden">
                 <AvatarImage
                   src={image}
                   alt="@profile image"
@@ -134,9 +134,9 @@ const CourseSelectionComp = ({ userData, onBack, onBack2, course }) => {
                 </AvatarFallback>
               </Avatar>
               <div>
-              <h1 className="text-xl md:text-2xl font-semibold text-gray-800">{student?.name}</h1>
-              <h1 className="text-gray-600 text-sm">Mail:  {student?.email}</h1>
-              <h1 className="text-gray-600 text-sm">Contact No:  {student?.phoneNumber}</h1>
+              <h1 className="text-xl md:text-2xl font-semibold ">{student?.name}</h1>
+              <h1 className="text-muted-foreground text-sm">Mail:  {student?.email}</h1>
+              <h1 className="text-muted-foreground text-sm">Contact No:  {student?.phoneNumber}</h1>
               </div>
             </div>
 
@@ -149,7 +149,7 @@ const CourseSelectionComp = ({ userData, onBack, onBack2, course }) => {
               <DetailsInfo name="parentName" value={student?.parentName} />
             </div>
             <div className="space-y-1">
-            <h1 className="col-span-full text-lg font-semibold text-gray-700">Address Details</h1>
+            <h1 className="col-span-full text-lg font-semibold ">Address Details</h1>
               <DetailsInfo name="State" value={student?.state} />
               <DetailsInfo name="District" value={student?.district} />
               <DetailsInfo name="Pincode" value={student?.pincode} />
@@ -158,15 +158,15 @@ const CourseSelectionComp = ({ userData, onBack, onBack2, course }) => {
             </div>
             
             <div className="space-y-1">
-              <h1 className="col-span-full text-lg font-semibold text-gray-700">Acadamic Info</h1>
+              <h1 className="col-span-full text-lg font-semibold ">Acadamic Info</h1>
               <DetailsInfo name="Qualification" value={student?.qualification} />
               <DetailsInfo name="Date Of Admission" value={format(new Date(userData?.dateOfAdmission || ''), 'PPP')} />
             </div>
 
             <div>
             <div className="mt-5 border-t py-4">
-          <h1 className="text-lg font-semibold text-gray-700 ">Student,s Declaration</h1>
-            <p className="text-sm text-gray-600 mt-1">Hereby solemnly declare that the above information provided by me are true to the best of my knowledge and belief. I shall obey the rules and regulation of TSSR COUNCIL study centre, now in force and as amended or altered from time to time. I accept all decision of the TSSR COUNCIL authorities in all matters of training conducted discipline are no right of question them in any court of law.</p>
+          <h1 className="text-lg font-semibold  ">Student,s Declaration</h1>
+            <p className="text-sm text-muted-foreground mt-1">Hereby solemnly declare that the above information provided by me are true to the best of my knowledge and belief. I shall obey the rules and regulation of TSSR COUNCIL study centre, now in force and as amended or altered from time to time. I accept all decision of the TSSR COUNCIL authorities in all matters of training conducted discipline are no right of question them in any court of law.</p>
           <div className="flex gap-2 mt-3">
             <Checkbox id="checkbox" checked={isAccept} onCheckedChange={(value)=>setAccept(value)} />
             <Label htmlFor="checkbox">I agree to the declaration above.</Label>
@@ -213,8 +213,8 @@ export default CourseSelectionComp;
 function DetailsInfo({name, value}) {
   return (
     <div className="space-x-1 grid md:grid-cols-5 ">
-      <h1 className="text-sm font-medium text-gray-600 md:col-span-2">{name} : </h1>
-      <h2 className=" font-medium text-gray-800 md:col-span-3">{value}</h2>
+      <h1 className="text-sm font-medium text-muted-foreground md:col-span-2">{name} : </h1>
+      <h2 className=" font-medium  md:col-span-3">{value}</h2>
     </div>
   )
 }

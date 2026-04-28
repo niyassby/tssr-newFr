@@ -100,7 +100,7 @@ const AdhaarVeificationComp = ({
         <div className="mb-5 space-y-0.5">
           <h1 className="text-xl font-semibold mb-1">Instruction</h1>
           {instruction.map((item, index) =>{
-            return <p className=" text-gray-700" key={index}>{index+1}. {item}</p>
+            return <p className=" text-muted-foreground" key={index}>{index+1}. {item}</p>
           })}
         </div>
           <div className="space-y-6">

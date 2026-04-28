@@ -70,7 +70,7 @@ const NavigateBack = () => {
   return (
     <div className="w-full max-w-[65rem] mx-auto">
       <div className="flex items-center justify-between mb-10">
-        <h1 className="text-2xl font-bold text-gray-800"> Manage Notifications </h1>
+        <h1 className="text-2xl font-bold "> Manage Notifications </h1>
         <div>
           <Button onClick={NavigateBack}>Back</Button>
             {" "}

@@ -207,7 +207,7 @@ import { deleteByUrl, useFirebaseUpload } from "@/hooks/useFirebaseUpload";
                       alt="Preview"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gray-100 hover:bg-gray-200">
+                    <div className="w-full h-full flex items-center justify-center bg-muted hover:bg-muted/20">
                       <ImageAdd02Icon className="text-muted-foreground" strokeWidth={1} size={30} />
                     </div>
                   )}
@@ -237,7 +237,7 @@ import { deleteByUrl, useFirebaseUpload } from "@/hooks/useFirebaseUpload";
             </div>
   
             <div className="pb-2 border-b">
-              <h1 className="text-xl font-medium text-gray-800">Personel info</h1>
+              <h1 className="text-xl font-medium ">Personel info</h1>
             </div>
   
             {/* Text Inputs */}
@@ -330,7 +330,7 @@ import { deleteByUrl, useFirebaseUpload } from "@/hooks/useFirebaseUpload";
               </div>
             </div>
             <div className="pb-2 border-b">
-              <h1 className="text-xl font-medium text-gray-800">Academic info</h1>
+              <h1 className="text-xl font-medium ">Academic info</h1>
             </div>
             <FormInput error={error && staff.qualification === ''} name="qualification" label="Qualification" value={staff.qualification} onChange={handleChange} />
             <FormInput error={error && staff.designation === ''} name="designation" label="Designation" value={staff.designation} onChange={handleChange} />

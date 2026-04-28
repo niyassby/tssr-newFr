@@ -24,7 +24,7 @@ export function ExcelTableLayout({
 
   return (
     <div
-      className={`bg-white rounded-2xl shadow border ${
+      className={`bg-background rounded-2xl shadow border ${
         isError ? "border-red-400" : " "
       } overflow-x-auto`}
     >
@@ -105,7 +105,7 @@ export function ExcelTableLayout({
             </TableRow>
           ))}
         </TableBody>
-        <TableFooter className={"bg-white"}>
+        <TableFooter>
           <TableRow>
             <TableCell >Total Students {students?.length}</TableCell>
           </TableRow>

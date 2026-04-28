@@ -1,18 +1,11 @@
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
-    TableFooter,
     TableHead,
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
-  import {
-    Avatar,
-    AvatarFallback,
-    AvatarImage,
-  } from "@/components/ui/avatar"
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/Context/authContext";
@@ -79,7 +72,7 @@ import Avatarview from "@/components/ui/avatarview";
               {(user.isAdmin ||settingData.editStudentDataPermission )  && (
                 <TableCell>
                   <Button
-                    className='bg-transparent hover:bg-primary-foreground cursor-pointer shadow-none border border-primary  text-primary'
+                    className='bg-transparent hover:bg-background  cursor-pointer shadow-none border border-primary  text-primary'
                     size="sm"
                     onClick={() => navigate(`edit?id=${item.enrollmentId}&isEnroll=true`)}
                   >

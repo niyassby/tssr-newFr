@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import { Toaster } from "./components/ui/sonner";
 import AuthContext from "./Context/authContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider } from "./Context/theme-provider";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,9 +19,11 @@ const queryClient = new QueryClient({
 
 createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
-    <Toaster />
-    <AuthContext>
-      <App />
-    </AuthContext>
+    <ThemeProvider>
+      <Toaster />
+      <AuthContext>
+        <App />
+      </AuthContext>
+    </ThemeProvider>
   </QueryClientProvider>
 );

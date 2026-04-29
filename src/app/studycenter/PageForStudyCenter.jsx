@@ -1,4 +1,3 @@
-import { useNotificationCount } from "@/Context/authContext";
 import { NewNotifications } from "@/components/studycenterComponents/NotificationComp/NewNotifications";
 import { AppSidebar } from "@/components/studycenterComponents/sideBar/app-sidebar";
 import {
@@ -28,7 +27,6 @@ export const formatCrumbName = (crumb) => {
 export default function PageForStudyCenter() {
   const location = useLocation();
   const burdCrumb = location.pathname.split('/')
-  const {notificationCount}=useNotificationCount()
 
   
   
@@ -59,11 +57,9 @@ export default function PageForStudyCenter() {
             </Breadcrumb>
           </div>
           <div className="relative space-x-2">
-            <NewNotifications/>
             <ModeToggle/>
-            {notificationCount > 0 &&<div className="absolute -top-1.5 -right-1.5 ">
-            <div className="text-white text-xs grid bg-red-500  rounded-full size-5 place-content-center animate-pulse">{notificationCount}</div>
-            </div>}
+            <NewNotifications/>
+            
           </div>
         </header>
         <div className="max-w-[95rem] mx-auto  px-4 md:px-8 py-6 w-full h-full ">

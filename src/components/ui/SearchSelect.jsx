@@ -56,7 +56,7 @@ function SearchSelect({
                     </Button>
                 </PopoverTrigger>
 
-                <PopoverContent className="w-full p-0 pb-2 max-w-md">
+                <PopoverContent avoidCollisions={false} className="w-full p-0 pb-2 max-w-md">
                     <Command>
                         <CommandInput placeholder={`Search ${text}...`} />
 

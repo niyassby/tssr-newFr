@@ -11,15 +11,21 @@ import { useAllNotifications } from "@/hooks/tanstackHooks/useNotifications"
 import { NotificationIcon } from "./GetIcon"
 import { formatDistanceStrict } from "date-fns"
 import { useNavigate } from "react-router-dom"
+import { useNotificationCount } from "@/Context/authContext"
 
 export function NewNotifications() {
     const {data, isLoading}=useAllNotifications()
+    const {notificationCount}=useNotificationCount()
+    // const notificationCount = 2
     const navigate = useNavigate()
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" size='icon'>
+        <Button variant="outline" size='icon' className={"relative"}>
         <Notification03Icon/>
+        {notificationCount > 0 &&<div className="absolute -top-2 -right-2 ">
+            <div className="text-white text-[11px] grid bg-red-500  rounded-full size-5 place-content-center animate-pulse">{notificationCount}</div>
+            </div>}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-72 md:w-80" align="end">

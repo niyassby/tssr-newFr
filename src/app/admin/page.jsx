@@ -1,4 +1,3 @@
-import { useNotificationCount } from "@/Context/authContext"
 import { AppSidebar } from "@/components/admincomp/SideBarAdmin/app-sidebar"
 import { NewNotifications } from "@/components/studycenterComponents/NotificationComp/NewNotifications"
 import {
@@ -20,7 +19,7 @@ import { Outlet, useLocation } from "react-router-dom"
 import { formatCrumbName } from "../studycenter/PageForStudyCenter"
 
 export default function Page() {
-   const {notificationCount}=useNotificationCount()
+   
    const location = useLocation();
   const burdCrumb = location.pathname.split('/')
   return (
@@ -48,11 +47,8 @@ export default function Page() {
             </Breadcrumb>
           </div>
           <div className="relative space-x-2">
-            <NewNotifications/>
             <ModeToggle/>
-            {notificationCount > 0 &&<div className="absolute -top-1.5 -right-1.5 ">
-            <div className="text-white text-xs grid bg-red-500  rounded-full size-5 place-content-center animate-pulse">{notificationCount}</div>
-            </div>}
+            <NewNotifications/>
           </div>
         </header>
         <div className="max-w-[95rem] mx-auto  px-4 md:px-8 py-6 w-full h-full ">

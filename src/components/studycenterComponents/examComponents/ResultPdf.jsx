@@ -127,7 +127,7 @@ export const ResultData = forwardRef(({ data, className }, ref) => {
                   alt=""
                 />
                 <div className="relativ e  ">
-                  <p>TSST Council</p>
+                  <p>TSSR COUNCIL</p>
                 </div>
               </div>
 
